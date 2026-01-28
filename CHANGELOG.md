@@ -1,3 +1,20 @@
+# [1.3.0](https://github.com/Hertzole/docfx-to-astro/compare/v1.2.0...v1.3.0) (2026-01-28)
+
+
+### Bug Fixes
+
+* formatting for parameter descriptions ([a828cee](https://github.com/Hertzole/docfx-to-astro/commit/a828cee10e562d1bdf6998a2ee4ef98f0382b85d))
+* links to members ([3994b15](https://github.com/Hertzole/docfx-to-astro/commit/3994b15ffb8429f7a3c493f033269c247fded9ea))
+* links to members with multiple arguments ([7b43af1](https://github.com/Hertzole/docfx-to-astro/commit/7b43af140039bae75d52603ac74e896dd443d482))
+* links to subtypes ([c0eb574](https://github.com/Hertzole/docfx-to-astro/commit/c0eb5740c6dabddc88b8abef552db2b3a264a709))
+* multiline code blocks ([235c6ab](https://github.com/Hertzole/docfx-to-astro/commit/235c6abc411b66e01d7d1754377dcc0e0f16619b))
+* remarks for Properties ([bceaa3f](https://github.com/Hertzole/docfx-to-astro/commit/bceaa3f803f6285a6609703993be044d26cac27a))
+
+
+### Features
+
+* support .NET 10 ([0464bd8](https://github.com/Hertzole/docfx-to-astro/commit/0464bd87a286edcdf045705d03296cac58d4b91f))
+
 # [1.2.0](https://github.com/Hertzole/docfx-to-astro/compare/v1.1.1...v1.2.0) (2025-09-08)
 
 
