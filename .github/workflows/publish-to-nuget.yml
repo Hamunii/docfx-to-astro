@@ -26,7 +26,7 @@ jobs:
 
     - name: Semantic Release
       id: semantic
-      uses: cycjimmy/semantic-release-action@v4
+      uses: cycjimmy/semantic-release-action@v6
       with:
         extra_plugins: |
           @semantic-release/exec
@@ -37,6 +37,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Pack .NET Tool
+      if: steps.semantic.outputs.new_release_published == 'true'
       run: |
         dotnet clean
         dotnet pack DocfxToAstro/DocfxToAstro.csproj -c Release -o tool_output -p:AssemblyVersion=${{ steps.semantic.outputs.new_release_version }} -p:Version=${{ steps.semantic.outputs.new_release_version }}
