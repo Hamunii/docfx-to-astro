@@ -592,7 +592,7 @@ internal sealed partial class MarkdownGenerator
 			sb.AppendLine();
 		}
 
-		WriteRemarks(in type, ref sb, in cancellationToken);
+		WriteRemarks(in type, ref sb, in cancellationToken, "##");
 
 		sb.AppendLine();
 	}
@@ -633,7 +633,7 @@ internal sealed partial class MarkdownGenerator
 				sb.AppendLine("```");
 			}
 
-			WriteRemarks(in field, ref sb, in cancellationToken);
+			WriteRemarks(in field, ref sb, in cancellationToken, "####");
 
 			sb.AppendLine();
 		}
@@ -841,7 +841,7 @@ internal sealed partial class MarkdownGenerator
 		}
 	}
 
-	private static void WriteRemarks(in TypeDocumentation type, ref Utf16ValueStringBuilder sb, in CancellationToken cancellationToken, string header = "##")
+	private static void WriteRemarks(in TypeDocumentation type, ref Utf16ValueStringBuilder sb, in CancellationToken cancellationToken, string header)
 	{
 		cancellationToken.ThrowIfCancellationRequested();
 
