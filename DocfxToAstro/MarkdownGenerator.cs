@@ -38,6 +38,7 @@ internal sealed partial class MarkdownGenerator
 			indexBuilder.AppendLine("title: API Reference");
 			indexBuilder.AppendLine("sidebar:");
 			indexBuilder.AppendLine("  hidden: true");
+			indexBuilder.AppendLine("editUrl: false");
 			indexBuilder.AppendLine("---");
 			indexBuilder.AppendLine();
 
@@ -112,6 +113,7 @@ internal sealed partial class MarkdownGenerator
 			indexBuilder.AppendLine("title: API Reference");
 			indexBuilder.AppendLine("sidebar:");
 			indexBuilder.AppendLine("  hidden: true");
+			indexBuilder.AppendLine("editUrl: false");
 			indexBuilder.AppendLine("---");
 			indexBuilder.AppendLine();
 
@@ -249,6 +251,7 @@ internal sealed partial class MarkdownGenerator
 			indexBuilder.AppendLine(assembly.Name.ToLowerInvariant());
 			indexBuilder.AppendLine("sidebar:");
 			indexBuilder.AppendLine("  order: 0");
+			indexBuilder.AppendLine("editUrl: false");
 			indexBuilder.AppendLine("---");
 
 			List<TypeDocumentation> classes = assembly.Types.Where(static x => x.Type == ItemType.Class).ToList();
@@ -352,6 +355,7 @@ internal sealed partial class MarkdownGenerator
 			indexBuilder.AppendLine(namespaceDoc.Name.ToLowerInvariant());
 			indexBuilder.AppendLine("sidebar:");
 			indexBuilder.AppendLine("  order: 0");
+			indexBuilder.AppendLine("editUrl: false");
 			indexBuilder.AppendLine("---");
 
 			List<TypeDocumentation> classes = namespaceDoc.Types.Where(static x => x.Type == ItemType.Class).ToList();
@@ -507,6 +511,13 @@ internal sealed partial class MarkdownGenerator
 		sb.AppendLine("sidebar:");
 		sb.Append("  label: ");
 		sb.AppendLine(root.Name);
+
+		sb.Append("editUrl: ");
+		if (root.Source?.TryGetSourceUrl(out var sourceUrl) ?? false)
+			sb.AppendLine(sourceUrl);
+		else
+			sb.AppendLine("false");
+
 		sb.AppendLine("---");
 	}
 
